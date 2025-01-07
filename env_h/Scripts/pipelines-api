@@ -1,4 +1,0 @@
-#!C:\Users\haila\eCommerce_analytics_platform\env_h\Scripts\python.exe
-
-from pipelines.api import server
-server.main()
