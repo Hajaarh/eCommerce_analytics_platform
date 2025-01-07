@@ -1,0 +1,10 @@
+fastapi
+pymongo[srv]
+pandas
+uvicorn[standard]
+scikit-learn
+pipelines
+streamlit
+requests
+plotly
+prophet
