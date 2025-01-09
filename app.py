@@ -61,13 +61,13 @@ if page == "Ventes":
     response = requests.get("http://127.0.0.1:8000/kpi/total-sales")
     if response.status_code == 200:
         data = response.json()["data"]
-        st.metric(label="💰 Total des ventes", value=f"{data['total_sales']:.2f} €")
+        st.metric(label="💰 Total des ventes", value=f"{data['total_sales']:.2f} $")
 
     response = requests.get("http://127.0.0.1:8000/kpi/average-basket")
     if response.status_code == 200:
         data = response.json()["data"]
         avg_basket = data["average_basket"]
-        st.metric(label="🛒 Panier moyen global", value=f"{avg_basket:.2f} €")
+        st.metric(label="🛒 Panier moyen global", value=f"{avg_basket:.2f} $")
 
     response = requests.get("http://127.0.0.1:8000/kpi/sales-per-dates")
     if response.status_code == 200:
@@ -124,7 +124,7 @@ if page == "Profits":
     response = requests.get("http://127.0.0.1:8000/kpi/total-profit")
     if response.status_code == 200:
         data = response.json()["data"]
-        st.metric(label="💰 Total des profits", value=f"{data['total_profit']:.2f} €")
+        st.metric(label="💰 Total des profits", value=f"{data['total_profit']:.2f} $")
 
     response = requests.get("http://127.0.0.1:8000/kpi/profit-by-category")
     if response.status_code == 200:
@@ -207,7 +207,7 @@ if page == "Clients":
 
                 st.markdown(f"**{name}** (Cluster {cluster}):")
                 st.write(f"- Fréquence moyenne: {data['averages']['frequency'][cluster]:.2f} achats")
-                st.write(f"- Valeur moyenne: {data['averages']['monetary'][cluster]:.2f} €")
+                st.write(f"- Valeur moyenne: {data['averages']['monetary'][cluster]:.2f} $")
                 st.write(f"- Pourcentage des clients: {data['distribution'][cluster] * 100:.1f}%")
                 st.write("---")
     else:
